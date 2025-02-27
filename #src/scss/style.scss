@@ -1,0 +1,68 @@
+@use "mixins" as *;
+@forward "typography";
+
+:root {
+	--WHITE-400: #FFFFFF;
+	--DARK-PURPLE-400: #211E2E;
+	--PURPLE-200: #6149AB;
+	--PURPLE-200: #8F76DE;
+	--GREY: #909090;
+	--Gradient-Purple: radial-gradient(119% 189% at 19% 0%, #DDD2FF 0%, #775ACE 100%);
+	--GRADIENT-LIGHT-PURPLE: linear-gradient(180deg, #F5F2FF 0%, #D0D1F9 100%);
+}
+
+.h1, h1 {
+	font-size: 32px;
+	font-weight: 600;
+	line-height: 120%;
+	@include r(768px) {
+		font-size: 24px;
+	}
+}
+.h2, h2 {
+	font-size: 26px;
+	font-weight: 500;
+	line-height: 120%;
+	@include r(768px) {
+		font-size: 20px;
+	}
+}
+.h5, h5 {
+	font-size: 18px;
+	font-weight: 300;
+	line-height: 120%;
+	&--ligth {
+		font-weight: 500;
+	}
+}
+.text  {
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 120%;
+	&-small {
+		font-size: 12px;
+		font-weight: 500;
+		line-height: 120%;
+		&--light {
+			font-weight: 300;
+		}
+	}
+	&-large {
+		font-size: 16px;
+		font-weight: 500;
+		line-height: 120%;
+		&--light {
+			font-weight: 300;
+		}
+	}
+	&--light {
+		font-weight: 300;
+	}
+}
+
+.container {
+	max-width: 1432px;
+	width: 100%;
+	margin: 0 auto;
+	padding: 0px 16px;
+}
