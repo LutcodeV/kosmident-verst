@@ -824,6 +824,9 @@ body {
 				width: 32px;
 				height: 32px;
 			}
+			@include r(1600px) {
+				display: none;
+			}
 		}
 		&-prev {
 			right: calc(100% + 24px);

@@ -1026,6 +1026,13 @@ h5--ligth {
   left: calc(100% + 24px);
 }
 
+@media screen and (max-width: 1600px) {
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: none;
+  }
+}
+
 @media screen and (max-width: 1024px) {
   .header {
     position: sticky;
