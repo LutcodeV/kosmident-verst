@@ -100,3 +100,29 @@ if(header) {
 		})
 	})
 }
+
+// SWIPERS
+const doctorsSwiper = new Swiper('.doctors-swiper', {
+	slidesPerView: 1,
+	spaceBetween: 16,
+	loop: true,
+	navigation: {
+		nextEl: '.swiper-doctors-next',
+		prevEl: '.swiper-doctors-prev',
+	},
+	pagination: {
+		el: '.swiper-pagination',
+		clickable: true,
+	},
+	breakpoints: {
+		768: {
+			slidesPerView: 2,
+		},
+		1024: {
+			slidesPerView: 3,
+		},
+		1440: {
+			slidesPerView: 4,
+		},
+	},
+})
