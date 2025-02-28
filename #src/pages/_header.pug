@@ -1,2 +1,70 @@
 header.header
-	.container
+	.header__top
+		.container
+			a.header__logo-wrapper(href="/")
+				img(src="/assets/img/logo.svg", alt="").header__logo
+			.contacts
+				a(href="#").contact
+					.contact__icon
+						img(src="/assets/img/gradient-icon-phone.svg")
+					.contact__column
+						p.contact__title +7 (495) 374 92 82
+						p.contact__subtitle Каждый день с 9:00 до 21:00
+				a(href="#").contact
+					.contact__icon
+						img(src="/assets/img/gradient-icon-address.svg")
+					.contact__column
+						p.contact__title Москва, м. некрасовка
+						p.contact__subtitle улица Вертолётчиков, 11
+			.utp
+				.utp-slider
+					.utp-slider__wrapper
+						p.utp-slider__text Запишитесь сейчас
+						p.utp-slider__text Бесплатная консультация
+						p.utp-slider__text Запишитесь сейчас
+						p.utp-slider__text Запишитесь сейчас
+				hr.utp__divider
+				button.utp__button.button.button--dark Записаться на прием
+				.header__burger
+					span
+					span
+					span
+
+	.header__bottom
+		.container
+			nav.header-nav
+				.header-nav__link
+					| Услуги
+					<svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M6.94629 2.69336L3.99967 5.63997L1.05306 2.69336" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+					</svg>
+					.header-nav__link-wrapper
+						.header-nav__link-content
+							a(href="#").header-nav__link Терапевтическая стоматология
+							a(href="#").header-nav__link Хирургия
+							a(href="#").header-nav__link Имплантация зубов
+							a(href="#").header-nav__link Протезирование зубов
+							a(href="#").header-nav__link Профилактика и гигиена
+							a(href="#").header-nav__link Эстетическая стоматология
+							a(href="#").header-nav__link Ортодонтическая стоматология
+							a(href="#").header-nav__link Пародонтология
+				a(href="#").header-nav__link О клинике
+				a(href="#").header-nav__link Врачи
+				a(href="#").header-nav__link Примеры работ
+				a(href="#").header-nav__link Статьи
+				a(href="#").header-nav__link Контакты
+			.contacts
+				a(href="#").contact
+					.contact__icon
+						img(src="/assets/img/gradient-icon-phone.svg")
+					.contact__column
+						p.contact__title +7 (495) 374 92 82
+						p.contact__subtitle Каждый день с 9:00 до 21:00
+				a(href="#").contact
+					.contact__icon
+						img(src="/assets/img/gradient-icon-address.svg")
+					.contact__column
+						p.contact__title Москва, м. некрасовка
+						p.contact__subtitle улица Вертолётчиков, 11
+
+			.utp__button.button.button--dark Записаться
