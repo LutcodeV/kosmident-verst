@@ -1255,7 +1255,7 @@ body {
 		@extend .text-large, .text-large--light;
 		opacity: 0.5;
 	}
-	@include r(703px) {
+	@include r(768px) {
 		padding: 16px;
 	}
 }
@@ -1298,7 +1298,6 @@ body {
 		top: 24px;
 		left: 24px;
 	}
-
 	@include r(703px) {
 		&__decor {
 			height: 230px;
@@ -1385,5 +1384,115 @@ body {
 	&__text {
 		@extend .text-large, .text-large--light;
 		color: var(--PURPLE-400);
+	}
+}
+// ABOUT
+.about-card {
+	padding: 40px;
+	background: var(--WHITE-400);
+	border-radius: 24px;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 32px 48px	;
+	&__img {
+		object-fit: contain;
+		border-radius: 24px;
+		width: 100%;
+		object-position: center bottom;
+		min-width: 296px;
+		background: radial-gradient(286.17% 128.02% at 66.59% 21.32%, rgba(197, 178, 255, 0.20) 0%, rgba(39, 29, 69, 0.20) 100%), #FFF;
+		flex: 1 1 0;
+	}
+	@include r(1024px) {
+		flex-direction: column;
+		padding: 16px;
+	}
+}
+.about-content {
+	flex: 1 1 0;
+	min-width: 296px;
+	display: flex;
+	flex-direction: column;
+	&__header {
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+	}
+	&__title {
+		@extend .h2;
+		display: flex;
+		align-items: center;
+		gap: 16px;
+		img {
+			width: 54px;
+			height: 54px;
+		}
+	}
+	&__body {
+		margin-top: 40px;
+	}
+	&__text {
+		font-size: 18px;
+		font-weight: 300;
+		line-height: 160%;
+		&+& {
+			margin-top: 16px;
+		}
+	}
+	&__button {
+		margin-top: 24px;
+	}
+	&__footer {
+		margin-top: 40px;
+		padding-top: 16px;
+		border-top: 1px solid rgba(144, 144, 144, 0.20);
+		display: flex;
+		justify-content: space-between;
+	}
+	&__footer-row {
+		display: flex;
+		gap: 8px;
+		align-items: center;
+	}
+	@include r(768px) {
+		&__title {
+			img {
+				display: none;
+			}
+		}
+		&__body {
+			margin-top: 24px;
+		}
+		&__footer {
+			padding-top: 16px;
+			margin-top: 32px;
+			flex-direction: column;
+			gap: 24px;
+		}
+	}
+}
+.about-content-info {
+	padding: 8px 16px 8px 12px;
+	border-radius: 16px;
+	display: inline-flex;
+	width: auto;
+	margin-right: auto;
+	gap: 8px;
+	align-items: center;
+	justify-content: center;
+	background: #F5F4F7;
+	color: var(--PURPLE-200);
+	font-size: 12px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 120%;
+	letter-spacing: 0.84px;
+	text-transform: uppercase;
+	svg {
+		min-width: 24px;
+		margin-bottom: auto;
+	}
+	@include r(768px) {
+		text-align: left;
 	}
 }

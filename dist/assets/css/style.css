@@ -84,6 +84,7 @@ h1 {
 }
 
 .h2,
+.about-content__title,
 .callback-form__title,
 .review__title,
 .section-header__title,
@@ -1752,6 +1753,142 @@ h5--ligth {
   color: var(--PURPLE-400);
 }
 
+.about-card {
+  padding: 40px;
+  background: var(--WHITE-400);
+  border-radius: 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  gap: 32px 48px;
+}
+
+.about-card__img {
+  -o-object-fit: contain;
+  object-fit: contain;
+  border-radius: 24px;
+  width: 100%;
+  -o-object-position: center bottom;
+  object-position: center bottom;
+  min-width: 296px;
+  background: radial-gradient(286.17% 128.02% at 66.59% 21.32%, rgba(197, 178, 255, 0.2) 0%, rgba(39, 29, 69, 0.2) 100%), #FFF;
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 0px;
+  flex: 1 1 0;
+}
+
+.about-content {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 0px;
+  flex: 1 1 0;
+  min-width: 296px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.about-content__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.about-content__title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.about-content__title img {
+  width: 54px;
+  height: 54px;
+}
+
+.about-content__body {
+  margin-top: 40px;
+}
+
+.about-content__text {
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 160%;
+}
+
+.about-content__text + .about-content__text {
+  margin-top: 16px;
+}
+
+.about-content__button {
+  margin-top: 24px;
+}
+
+.about-content__footer {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(144, 144, 144, 0.2);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.about-content__footer-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 8px;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.about-content-info {
+  padding: 8px 16px 8px 12px;
+  border-radius: 16px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: auto;
+  margin-right: auto;
+  gap: 8px;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  background: #F5F4F7;
+  color: var(--PURPLE-200);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%;
+  letter-spacing: 0.84px;
+  text-transform: uppercase;
+}
+
+.about-content-info svg {
+  min-width: 24px;
+  margin-bottom: auto;
+}
+
 @media screen and (min-width: 769px) {
   .services__grid {
     display: grid;
@@ -1938,6 +2075,14 @@ h5--ligth {
   .footer-middle__column {
     margin-left: 0 !important;
   }
+
+  .about-card {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    padding: 16px;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -1947,6 +2092,7 @@ h5--ligth {
   }
 
   .h2,
+  .about-content__title,
   .callback-form__title,
   .review__title,
   .section-header__title,
@@ -2049,13 +2195,35 @@ h5--ligth {
     flex-direction: column;
     gap: 8px;
   }
-}
 
-@media screen and (max-width: 703px) {
   .callback-form {
     padding: 16px;
   }
 
+  .about-content__title img {
+    display: none;
+  }
+
+  .about-content__body {
+    margin-top: 24px;
+  }
+
+  .about-content__footer {
+    padding-top: 16px;
+    margin-top: 32px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .about-content-info {
+    text-align: left;
+  }
+}
+
+@media screen and (max-width: 703px) {
   .callback-column__decor {
     height: 230px;
     -o-object-fit: cover;
