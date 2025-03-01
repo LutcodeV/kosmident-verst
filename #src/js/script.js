@@ -126,3 +126,59 @@ const doctorsSwiper = new Swiper('.doctors-swiper', {
 		},
 	},
 })
+const servicesSwiper = new Swiper('.services-swiper', {
+	slidesPerView: 1,
+	spaceBetween: 16,
+	loop: true,
+	breakpoints: {
+		768: {
+			slidesPerView: 2,
+		},
+		1024: {
+			enabled: false
+		},
+	},
+})
+const reviewsSwiper = new Swiper('.review-swiper', {
+	slidesPerView: 'auto',
+	spaceBetween: 16,
+	loop: true,
+})
+
+// REVIEW
+
+const previewReview = document.querySelector('.review-preview')
+if(previewReview) {
+	const previewReviewImages = previewReview.querySelector('.review-preview-images')
+	const previewReviewVideo = previewReview.querySelector('.review-preview-video')
+	const previewReviewVideoVideo = previewReviewVideo.querySelector('video')
+
+	previewReviewVideo.addEventListener('click', () => {
+		if(!previewReview.classList.contains('video')) {
+			previewReview.classList.toggle('video')
+		} else {
+			if(previewReviewVideoVideo.paused) {
+				previewReviewVideo.classList.add('active')
+				previewReviewVideoVideo.play()
+			} else {
+				previewReviewVideo.classList.remove('active')
+				previewReviewVideoVideo.pause()
+			}
+		}
+	})
+	previewReviewImages.addEventListener('click', () => {
+		if(previewReview.classList.contains('video')) {
+			previewReview.classList.toggle('video')
+			previewReviewVideoVideo.pause()
+			previewReviewVideo.classList.remove('active')
+		}
+	})
+
+	if(previewReviewImages) {
+		const previewReviewImagesProgress = previewReviewImages.querySelector('.review-preview-images__progress')
+		previewReviewImagesProgress.addEventListener('input', () => {
+			const value = previewReviewImagesProgress.value
+			previewReviewImages.style = `--progress: ${value}%`
+		})
+	}
+}

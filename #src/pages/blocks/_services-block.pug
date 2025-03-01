@@ -19,11 +19,21 @@ section.section.services
 	.container
 		+sectionHeader('clipboard-plus','Услуги','Посмотреть все услуги')
 		.services__grid
-			+serviceCard('от 2000 р', 'Терапевтическая <br> стоматология', '01')
-			+serviceCard('от 2000 р', 'Терапевтическая <br> стоматология', '02')
-			+serviceCard('от 2000 р', 'Терапевтическая <br> стоматология', '03')
-			+serviceCard('от 2000 р', 'Терапевтическая <br> стоматология', '04')
-			+serviceCard('от 2000 р', 'Терапевтическая <br> стоматология', '05')
-			+serviceCard('от 2000 р', 'Терапевтическая <br> стоматология', '06')
-			+serviceCard('от 2000 р', 'Терапевтическая <br> стоматология', '07')
-			+serviceCard('от 2000 р', 'Терапевтическая <br> стоматология', '08')
+			.swiper.services-swiper
+				.swiper-wrapper
+					.swiper-slide
+						+serviceCard('от 2000 р', 'Терапевтическая <br> стоматология', '01')
+					.swiper-slide
+						+serviceCard('от 2000 р', 'Терапевтическая <br> стоматология', '02')
+					.swiper-slide
+						+serviceCard('от 2000 р', 'Терапевтическая <br> стоматология', '03')
+					.swiper-slide
+						+serviceCard('от 2000 р', 'Терапевтическая <br> стоматология', '04')
+					.swiper-slide
+						+serviceCard('от 2000 р', 'Терапевтическая <br> стоматология', '05')
+					.swiper-slide
+						+serviceCard('от 2000 р', 'Терапевтическая <br> стоматология', '06')
+					.swiper-slide
+						+serviceCard('от 2000 р', 'Терапевтическая <br> стоматология', '07')
+					.swiper-slide
+						+serviceCard('от 2000 р', 'Терапевтическая <br> стоматология', '08')
