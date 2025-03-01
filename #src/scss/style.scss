@@ -579,6 +579,11 @@ body {
 		display: flex;
 		flex-direction: column;
 	}
+	@include r(768px) {
+		&+& {
+			margin-top: 60px;
+		}
+	}
 }
 .section-header {
 	display: flex;
@@ -719,9 +724,6 @@ body {
 	}
 }
 // DOCTORS
-.doctors {
-
-}
 .doctor-card {
 	border-radius: 24px;
 	width: 100%;
@@ -1163,5 +1165,225 @@ body {
 				transform: scale(0.5);
 			}
 		}
+	}
+}
+// DOCTORS
+.article-card {
+	border-radius: 24px;
+	width: 100%;
+	overflow: hidden;
+	background: #fff;
+	transition: .3s ease;
+	cursor: pointer;
+	&__img {
+		height: 280px;
+		width: 100%;
+		object-fit: cover;
+		object-position: center;
+	}
+	&__body {
+		padding: 24px;
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+	}
+	&__date {
+		@extend .text-small, .text-small--light;
+		color: var(--GREY);
+	}
+	&__title {
+		@extend .h5;
+	}
+	@include hover {
+		box-shadow: 0px 16px 24px 0px rgba(209, 209, 229, 0.50);
+	}
+}
+// CALLBACK
+.callback {
+	.container {
+		display: flex;
+		gap: 16px;
+		flex-wrap: wrap;
+		flex-direction: row;
+	}
+}
+.callback-form {
+	display: flex;
+	flex-direction: column;
+	flex: 1 1 0;
+	min-width: 328px;
+	padding: 40px 16px;
+	border-radius: 24px;
+	background: #fff;
+	&__footer {
+		padding: 12px;
+		border-radius: 16px;
+		display: flex;
+		gap: 8px;
+		align-items: center;
+		justify-content: center;
+		background: #F5F4F7;
+	}
+	&__text {
+		color: var(--PURPLE-200);
+		color: var(--PURPLE-200, #8F76DE);
+		text-align: center;
+		font-size: 12px;
+		font-style: normal;
+		font-weight: 700;
+		line-height: 120%;
+		letter-spacing: 0.84px;
+		text-transform: uppercase;
+	}
+	&__column {
+		display: flex;
+		max-width: 420px;
+		width: 100%;
+		margin: 0 auto;
+		flex-direction: column;
+		gap: 16px;
+	}
+	&__header {
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+	}
+	&__title {
+		@extend .h2;
+	}
+	&__subtitle {
+		@extend .text-large, .text-large--light;
+		opacity: 0.5;
+	}
+	@include r(703px) {
+		padding: 16px;
+	}
+}
+.callback-column {
+	display: flex;
+	min-width: 328px;
+	min-height: 320px;
+	flex-direction: column;
+	flex: 1 1 0;
+	position: relative;
+	border-radius: 24px;
+	background: radial-gradient(286.17% 128.02% at 66.59% 21.32%, rgba(197, 178, 255, 0.20) 0%, rgba(39, 29, 69, 0.20) 100%), #FFF;
+	&__teeth-wrapper {
+		position: absolute;
+		top: 0;
+		right: 0;
+		height: 100%;
+		overflow: hidden;
+		max-width: 512px;
+		display: flex;
+		max-width: 100%;
+		align-items: flex-end;
+		justify-content: flex-start;
+		border-radius: 24px;
+	}
+	&__logo {
+		height: 64px;
+		position: absolute;
+		bottom: 24px;
+		left: 24px;
+	}
+	&__decor {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		width: 100%;
+	}
+	.contact {
+		position: absolute;
+		top: 24px;
+		left: 24px;
+	}
+
+	@include r(703px) {
+		&__decor {
+			height: 230px;
+			object-fit: cover;
+			object-position: left top;
+		}
+		&__logo {
+			height: 42px;
+		}
+	}
+}
+// FORM
+.form {
+	display: flex;
+	flex-direction: column;
+	gap: 32px;
+	&__group {
+		display: flex;
+		flex-direction: column;
+		gap: 24px;
+	}
+	&__inputs {
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+	}
+	&__button {
+		padding: 16px;
+	}
+}
+// INPUT
+.input {
+	@extend .text-large, .text-large--light;
+	width: 100%;
+	padding: 20px;
+	border-radius: 100px;
+	background: #F5F4F7;
+	transition: .3s ease;
+	text-align: center;
+	&::placeholder {
+		opacity: 0.3;
+	}
+}
+// CHECKBOX
+.checkbox {
+	display: flex;
+	position: relative;
+	align-items: center;
+	gap: 16px;
+	cursor: pointer;
+	&__input {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		overflow: hidden;
+		top: 0;
+		left: 0;
+		opacity: 0
+	}
+	&__box {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 24px;
+		height: 24px;
+		min-width: 24px;
+		min-height: 24px;
+		transition: .3s ease;
+		border-radius: 50%;
+		border: 1px solid var(--PURPLE-400);
+		svg {
+			min-width: 24px;
+			min-height: 24px;
+			transition: .3s ease;
+			opacity: 0;
+		}
+	}
+	&__input:checked + &__box {
+		background: var(--PURPLE-400);
+		svg {
+			opacity: 1;
+		}
+	}
+	&__text {
+		@extend .text-large, .text-large--light;
+		color: var(--PURPLE-400);
 	}
 }

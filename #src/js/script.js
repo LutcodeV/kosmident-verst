@@ -4,8 +4,8 @@ const inputsTypeTel = document.querySelectorAll('input[type="tel"]')
 if(inputsTypeTel.length > 0) {
 	inputsTypeTel.forEach((input) => {
 		new Inputmask({
-			mask: '+7 999 999 99 99',
-			placeholder: '+7 XXX XXX XX XX',
+			mask: '+7 (999) 999 - 99 - 99',
+			placeholder: '+7 (___) ___ - __ - __',
 		}).mask(input);
 	})
 }
@@ -109,6 +109,30 @@ const doctorsSwiper = new Swiper('.doctors-swiper', {
 	navigation: {
 		nextEl: '.swiper-doctors-next',
 		prevEl: '.swiper-doctors-prev',
+	},
+	pagination: {
+		el: '.swiper-pagination',
+		clickable: true,
+	},
+	breakpoints: {
+		768: {
+			slidesPerView: 2,
+		},
+		1024: {
+			slidesPerView: 3,
+		},
+		1440: {
+			slidesPerView: 4,
+		},
+	},
+})
+const articlesSwiper = new Swiper('.articles-swiper', {
+	slidesPerView: 1,
+	spaceBetween: 16,
+	loop: true,
+	navigation: {
+		nextEl: '.swiper-articles-next',
+		prevEl: '.swiper-articles-prev',
 	},
 	pagination: {
 		el: '.swiper-pagination',
