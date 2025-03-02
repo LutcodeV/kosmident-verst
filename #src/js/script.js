@@ -168,7 +168,30 @@ const reviewsSwiper = new Swiper('.review-swiper', {
 	spaceBetween: 16,
 	loop: true,
 })
-
+const benefitsSwiper = new Swiper('.benefits-swiper', {
+	slidesPerView: 1,
+	spaceBetween: 16,
+	loop: true,
+	navigation: {
+		nextEl: '.swiper-benefits-next',
+		prevEl: '.swiper-benefits-prev',
+	},
+	pagination: {
+		el: '.swiper-pagination',
+		clickable: true,
+	},
+	breakpoints: {
+		768: {
+			slidesPerView: 2,
+		},
+		1024: {
+			slidesPerView: 3,
+		},
+		1440: {
+			slidesPerView: 4,
+		},
+	},
+})
 // REVIEW
 
 const previewReview = document.querySelector('.review-preview')

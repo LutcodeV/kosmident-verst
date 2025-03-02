@@ -1,0 +1,35 @@
+include ../_mixins.pug
+mixin benefitCard(title, subtitle, icon="01")
+	.benefit-card
+		.benefit-card__icon-wrapper
+			img.benefit-card__icon(src=`/assets/img/gradient-icon-benefit-${icon}.svg`, alt="")
+		p.benefit-card__title!= title
+		p.benefit-card__subtitle!= subtitle
+
+section.section.benefits
+	.container
+		+sectionHeader('medal','Преимущества  лечения<br>в нашей клинике')
+		.swiper__wrapper
+			.swiper.benefits-swiper
+				.swiper-wrapper
+					.swiper-slide
+						+benefitCard('Более 10 лет опыта у каждого врача', 'Фиксированные тарифы без скрытых платежей')
+					.swiper-slide
+						+benefitCard('Используем 3D-диагностику и лазерное лечение', 'Индивидуальный план лечения для каждого пациента', '02')
+					.swiper-slide
+						+benefitCard('Контроль качества', 'Регулярные проверки и высокие стандарты обслуживания', '03')
+					.swiper-slide
+						+benefitCard('Отношения на равных', 'Уважительное и партнерское взаимодействие с пациентами', '04')
+					.swiper-slide
+						+benefitCard('Когда после удаления зуба можно ставить имплант?', 'Уважительное и партнерское взаимодействие с пациентами', '01')
+					.swiper-slide
+						+benefitCard('Когда после удаления зуба можно ставить имплант?', 'Уважительное и партнерское взаимодействие с пациентами', '02')
+				.swiper-pagination
+			.swiper-benefits-prev.swiper-button-prev
+				<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M25.667 16H6.33366M6.33366 16L11.0003 11.3334M6.33366 16L11.0003 20.6667" stroke="#6149AB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+				</svg>
+			.swiper-benefits-next.swiper-button-next
+				<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M6.33301 16H25.6663M25.6663 16L20.9997 11.3334M25.6663 16L20.9997 20.6667" stroke="#6149AB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+				</svg>
