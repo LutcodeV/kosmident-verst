@@ -286,6 +286,11 @@ h5--ligth {
   background: #E8E4F2;
 }
 
+.header {
+  position: relative;
+  z-index: 100;
+}
+
 .header__top {
   padding: 12px 0px;
   background: white;

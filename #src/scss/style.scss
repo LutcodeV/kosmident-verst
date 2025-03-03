@@ -139,6 +139,8 @@ body {
 }
 // HEADER
 .header {
+	position: relative;
+	z-index: 100;
 	&__top {
 		padding: 12px 0px;
 		background: white;
