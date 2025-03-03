@@ -192,8 +192,8 @@ const benefitsSwiper = new Swiper('.benefits-swiper', {
 		},
 	},
 })
-// REVIEW
 
+// REVIEW
 const previewReview = document.querySelector('.review-preview')
 if(previewReview) {
 	const previewReviewImages = previewReview.querySelector('.review-preview-images')
@@ -227,5 +227,34 @@ if(previewReview) {
 			const value = previewReviewImagesProgress.value
 			previewReviewImages.style = `--progress: ${value}%`
 		})
+	}
+}
+
+// FAQS
+const faqs = document.querySelectorAll('.faq')
+if(faqs.length > 0) {
+	faqs.forEach((faq) => {
+		faq.addEventListener('click', () => {
+			faq.classList.toggle('active')
+		})
+	})
+}
+
+// MAP
+const map = document.querySelector('#map')
+if(map) {
+	ymaps.ready(init);
+	function init(){
+			const myMap = new ymaps.Map("map", {
+					center: [55.702906, 37.940921],
+					zoom: 17
+			});
+			const myPlacemark = new ymaps.GeoObject({
+				geometry: {
+					type: "Point",
+					coordinates: [55.702906, 37.940921]
+				}
+			});
+			myMap.geoObjects.add(myPlacemark)
 	}
 }
