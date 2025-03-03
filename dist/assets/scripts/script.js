@@ -102,6 +102,19 @@ if(header) {
 }
 
 // SWIPERS
+const heroSwiper = new Swiper('.hero-swiper', {
+	slidesPerView: 1,
+	spaceBetween: 16,
+	loop: true,
+	navigation: {
+		nextEl: '.swiper-hero-next',
+		prevEl: '.swiper-hero-prev',
+	},
+	pagination: {
+		el: '.swiper-pagination',
+		clickable: true,
+	},
+})
 const doctorsSwiper = new Swiper('.doctors-swiper', {
 	slidesPerView: 1,
 	spaceBetween: 16,
@@ -257,4 +270,15 @@ if(map) {
 			});
 			myMap.geoObjects.add(myPlacemark)
 	}
+}
+
+// HERO
+const heroBlock = document.querySelector('.hero');
+if(heroBlock) {
+	const heroContent = heroBlock.querySelector('.hero-content')
+	const heroContentClose = heroContent.querySelector('.hero-content__close')
+
+	heroContentClose.addEventListener('click', () => {
+		heroContent.classList.toggle('active')
+	})
 }
