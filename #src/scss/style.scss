@@ -895,6 +895,9 @@ body {
 		font-weight: 700;
 		text-transform: uppercase;
 	}
+	&+& {
+		margin-top: 16px;
+	}
 	@include r(768px) {
 		padding: 16px;
 	}

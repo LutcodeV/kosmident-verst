@@ -1127,6 +1127,10 @@ h5--ligth {
   text-transform: uppercase;
 }
 
+.review + .review {
+  margin-top: 16px;
+}
+
 .review-card {
   margin-top: 24px;
   padding: 16px;

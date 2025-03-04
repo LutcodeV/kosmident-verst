@@ -215,38 +215,40 @@ const benefitsSwiper = new Swiper('.benefits-swiper', {
 
 // REVIEW
 const previewReview = document.querySelector('.review-preview')
-const previewReviewImages = document.querySelector('.review-preview-images')
-if(previewReview) {
+const previewReviewImages = document.querySelectorAll('.review-preview-images')
+if(previewReview && previewReviewImages.length > 0) {
 	const previewReviewVideo = previewReview.querySelector('.review-preview-video')
-	const previewReviewVideoVideo = previewReviewVideo.querySelector('video')
-
-	previewReviewVideo.addEventListener('click', () => {
-		if(!previewReview.classList.contains('video')) {
-			previewReview.classList.toggle('video')
-		} else {
-			if(previewReviewVideoVideo.paused) {
-				previewReviewVideo.classList.add('active')
-				previewReviewVideoVideo.play()
+	if(previewReviewVideo) {
+		const previewReviewVideoVideo = previewReviewVideo.querySelector('video')
+		previewReviewVideo.addEventListener('click', () => {
+			if(!previewReview.classList.contains('video')) {
+				previewReview.classList.toggle('video')
 			} else {
-				previewReviewVideo.classList.remove('active')
-				previewReviewVideoVideo.pause()
+				if(previewReviewVideoVideo.paused) {
+					previewReviewVideo.classList.add('active')
+					previewReviewVideoVideo.play()
+				} else {
+					previewReviewVideo.classList.remove('active')
+					previewReviewVideoVideo.pause()
+				}
 			}
-		}
-	})
-	previewReviewImages.addEventListener('click', () => {
-		if(previewReview.classList.contains('video')) {
-			previewReview.classList.toggle('video')
-			previewReviewVideoVideo.pause()
-			previewReviewVideo.classList.remove('active')
-		}
-	})
-
+		})
+		previewReviewImages.addEventListener('click', () => {
+			if(previewReview.classList.contains('video')) {
+				previewReview.classList.toggle('video')
+				previewReviewVideoVideo.pause()
+				previewReviewVideo.classList.remove('active')
+			}
+		})
+	}
 }
-if(previewReviewImages) {
-	const previewReviewImagesProgress = previewReviewImages.querySelector('.review-preview-images__progress')
-	previewReviewImagesProgress.addEventListener('input', () => {
-		const value = previewReviewImagesProgress.value
-		previewReviewImages.style = `--progress: ${value}%`
+if(previewReviewImages.length > 0) {
+	previewReviewImages.forEach((item) => {
+		const previewReviewImagesProgress = item.querySelector('.review-preview-images__progress')
+		previewReviewImagesProgress.addEventListener('input', () => {
+			const value = previewReviewImagesProgress.value
+			item.style = `--progress: ${value}%`
+		})
 	})
 }
 

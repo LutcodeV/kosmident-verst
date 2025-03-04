@@ -1,0 +1,7 @@
+extends _layout
+
+block main
+	+breadcrumbs(['Главная','Примеры работы и отзывы'])
+	+pageHero('message-circle', 'Примеры работы и отзывы')
+	include blocks/_reviews-list-block
+	include blocks/_callback-block
