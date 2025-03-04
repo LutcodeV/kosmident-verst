@@ -282,3 +282,29 @@ if(heroBlock) {
 		heroContent.classList.toggle('active')
 	})
 }
+
+// INCLUDE-SERVICE
+const includeService = document.querySelector('.include-service')
+if(includeService) {
+	const includeServiceStepsItems = includeService.querySelectorAll('.include-service-steps__item')
+	const includeServiceIncludesList = includeService.querySelector('.include-service-includes__list')
+	const createIncludeList = (data) => {
+		includeServiceIncludesList.innerHTML = ''
+			data.forEach((item) => {
+				const li = document.createElement('p')
+				li.classList.add('include-service-includes__item')
+				li.innerHTML = item
+				includeServiceIncludesList.append(li)
+			})
+	}
+	includeServiceStepsItems.forEach((item) => {
+		const data = JSON.parse(item.getAttribute('data-items')) || []
+		item.addEventListener('click', () => {
+			if(item.classList.contains('active')) return
+			includeServiceStepsItems.forEach((item) => item.classList.remove('active'))
+			item.classList.add('active')
+			createIncludeList(data)
+		})
+	})
+	includeServiceStepsItems[0].click()
+}

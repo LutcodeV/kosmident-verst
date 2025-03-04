@@ -1,0 +1,41 @@
+include ../_mixins.pug
+
+section.section.include-service
+	.container
+		+sectionHeader('list','Что входит в услугу?')
+		.include-service__grid
+			.include-service-steps
+				.include-service-steps__column
+					p.include-service-steps__title Этапы процедуры
+					.include-service-steps__list
+						button.include-service-steps__item(data-items=`["Установка формателя десны","Изготовление индивидуальной коронки","Первичная консультация, осмотры КТ","Планировка будущего импланта с коронкой","Анестезия"]`)
+							span 1 этап
+							| Диагностика
+						button.include-service-steps__item(data-items=`["Изготовление индивидуальной коронки","Контрольный снимок","Планировка будущего импланта с коронкой","Анестезия","Установка импланта"]`)
+							span 2 этап
+							| Планирование
+						button.include-service-steps__item(data-items=`["Контрольный снимок","Фиксация коронки","Анестезия","Установка импланта"]`)
+							span 3 этап
+							| Подготовка
+						button.include-service-steps__item(data-items=`["Фиксация коронки","Слепки","Анестезия"]`)
+							span 4 этап
+							| Изготовление
+						button.include-service-steps__item(data-items=`["Установка формателя десны","Слепки","Первичная консультация, осмотры КТ","Анестезия"]`)
+							span 5 этап
+							| Установка
+				img.include-service-steps__img(src="/assets/img/include-service-img-01.jpg", alt="")
+			img.include-service__img(src="/assets/img/include-service-img-02.jpg", alt="")
+			.include-service-includes
+				.include-service-includes__header
+					.include-service-includes__icon
+						img(src='/assets/img/gradient-icon-check.svg')
+					p.include-service-includes__title Что включает услуга
+				.include-service-includes__list
+			.include-service-banner
+				img(src="/assets/img/services-icon-05.svg", alt="").include-service-banner__icon
+				p.include-service-banner__title Ваше здоровье — <br> наш приоритет
+			.include-service-discount
+				p.include-service-discount__suptitle Акции и скидки
+				p.include-service-discount__title Скидка 20% на первичную консультацию и диагностику
+				p.include-service-discount__text Для новых пациентов — первичная консультация с комплексной диагностикой по сниженной цене.
+				button.button.button--outline.include-service-discount__button Записаться на прием

@@ -1,0 +1,9 @@
+extends _layout
+
+block main
+	+breadcrumbs(['Главная','Услуги','Профилактика и гигиена'])
+	+pageHero('clipboard-plus', 'Профилактика и гигиена', text="Благодаря современным технологиям, многолетней практике и бесценным знаниям наши стоматологи могут справиться с любой проблемой полости рта.", linkText="Записаться на прием", true)
+	include blocks/_include-service-block
+	include blocks/_doctors-block
+	include blocks/_services-block
+	include blocks/_callback-block
