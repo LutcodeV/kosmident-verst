@@ -167,12 +167,19 @@ const servicesSwiper = new Swiper('.services-swiper', {
 	slidesPerView: 1,
 	spaceBetween: 16,
 	loop: true,
+	pagination: {
+		el: '.swiper-pagination',
+		clickable: true,
+	},
 	breakpoints: {
-		768: {
+		550: {
 			slidesPerView: 2,
 		},
+		768: {
+			slidesPerView: 3,
+		},
 		1024: {
-			enabled: false
+			slidesPerView: 4,
 		},
 	},
 })
@@ -208,8 +215,8 @@ const benefitsSwiper = new Swiper('.benefits-swiper', {
 
 // REVIEW
 const previewReview = document.querySelector('.review-preview')
+const previewReviewImages = document.querySelector('.review-preview-images')
 if(previewReview) {
-	const previewReviewImages = previewReview.querySelector('.review-preview-images')
 	const previewReviewVideo = previewReview.querySelector('.review-preview-video')
 	const previewReviewVideoVideo = previewReviewVideo.querySelector('video')
 
@@ -234,13 +241,13 @@ if(previewReview) {
 		}
 	})
 
-	if(previewReviewImages) {
-		const previewReviewImagesProgress = previewReviewImages.querySelector('.review-preview-images__progress')
-		previewReviewImagesProgress.addEventListener('input', () => {
-			const value = previewReviewImagesProgress.value
-			previewReviewImages.style = `--progress: ${value}%`
-		})
-	}
+}
+if(previewReviewImages) {
+	const previewReviewImagesProgress = previewReviewImages.querySelector('.review-preview-images__progress')
+	previewReviewImagesProgress.addEventListener('input', () => {
+		const value = previewReviewImagesProgress.value
+		previewReviewImages.style = `--progress: ${value}%`
+	})
 }
 
 // FAQS
