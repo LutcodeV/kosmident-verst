@@ -1,0 +1,39 @@
+include ../_mixins.pug
+mixin serviceCard(price, title, iconNumber)
+	.service-card
+		.service-card__top
+			.service-card__header
+				p.service-card__price= price
+				button.service-card__link
+					p.service-card__link-text Об услуге
+					<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M3.33333 8H12.6667" stroke="#6149AB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+						<path d="M8 3.33337L12.6667 8.00004L8 12.6667" stroke="#6149AB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+					</svg>
+			p.service-card__title!= title
+		.service-card__bottom
+			a(href="#").service-card__button.button.button--outline Записаться
+			img.service-card__img(src=`/assets/img/services-icon-${iconNumber}.svg`, alt="")
+
+section.section.services
+	.container
+		+sectionHeader(false,'Список всех услуг')
+		.services__grid
+			.swiper.services-swiper
+				.swiper-wrapper
+					.swiper-slide
+						+serviceCard('от 2000 р', 'Терапевтическая <br> стоматология', '01')
+					.swiper-slide
+						+serviceCard('от 2000 р', 'Терапевтическая <br> стоматология', '02')
+					.swiper-slide
+						+serviceCard('от 2000 р', 'Терапевтическая <br> стоматология', '03')
+					.swiper-slide
+						+serviceCard('от 2000 р', 'Терапевтическая <br> стоматология', '04')
+					.swiper-slide
+						+serviceCard('от 2000 р', 'Терапевтическая <br> стоматология', '05')
+					.swiper-slide
+						+serviceCard('от 2000 р', 'Терапевтическая <br> стоматология', '06')
+					.swiper-slide
+						+serviceCard('от 2000 р', 'Терапевтическая <br> стоматология', '07')
+					.swiper-slide
+						+serviceCard('от 2000 р', 'Терапевтическая <br> стоматология', '08')

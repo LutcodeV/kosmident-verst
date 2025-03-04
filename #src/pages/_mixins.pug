@@ -17,8 +17,9 @@ mixin block(key, marker=false)
 mixin sectionHeader(icon='clipboard-plus',title='Заголовок блока', linkText)
 	.section-header
 		.section-header__row
-			.section-header__icon-wrapper
-				img(src=`/assets/img/icon-${icon}.svg`, alt=`${title}`)
+			if icon
+				.section-header__icon-wrapper
+					img(src=`/assets/img/icon-${icon}.svg`, alt=`${title}`)
 			p.section-header__title!= title
 		if linkText
 			a(href="#").section-header__link.button= linkText
