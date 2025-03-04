@@ -1225,6 +1225,9 @@ body {
 		align-items: center;
 		justify-content: center;
 		background: #F5F4F7;
+		img {
+			min-width: 24px;
+		}
 	}
 	&__text {
 		color: var(--PURPLE-200);
@@ -1490,7 +1493,7 @@ body {
 	line-height: 120%;
 	letter-spacing: 0.84px;
 	text-transform: uppercase;
-	svg {
+	img {
 		min-width: 24px;
 		margin-bottom: auto;
 	}
@@ -1840,7 +1843,7 @@ body {
 		line-height: 120%;
 		letter-spacing: 0.84px;
 		text-transform: uppercase;
-		svg {
+		img {
 			min-width: 24px;
 			margin-bottom: auto;
 		}

@@ -1541,6 +1541,10 @@ h5--ligth {
   background: #F5F4F7;
 }
 
+.callback-form__footer img {
+  min-width: 24px;
+}
+
 .callback-form__text {
   color: var(--PURPLE-200);
   color: var(--PURPLE-200, #8F76DE);
@@ -1900,7 +1904,7 @@ h5--ligth {
   text-transform: uppercase;
 }
 
-.about-content-info svg {
+.about-content-info img {
   min-width: 24px;
   margin-bottom: auto;
 }
@@ -2339,7 +2343,7 @@ h5--ligth {
   text-transform: uppercase;
 }
 
-.hero-content__info svg {
+.hero-content__info img {
   min-width: 24px;
   margin-bottom: auto;
 }
