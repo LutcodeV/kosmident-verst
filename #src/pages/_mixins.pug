@@ -22,3 +22,25 @@ mixin sectionHeader(icon='clipboard-plus',title='Заголовок блока',
 			p.section-header__title!= title
 		if linkText
 			a(href="#").section-header__link.button= linkText
+
+mixin breadcrumbs(crumbs)
+	.breadcrumbs
+		.container
+			each item in crumbs
+				a(href="#").breadcrumb= item
+
+mixin pageHero(icon, title, text="Благодаря современным технологиям, многолетней практике и бесценным знаниям наши стоматологи могут справиться с любой проблемой полости рта.", linkText="Записаться на прием", isServiceInner=false)
+	section.section.page-hero
+		.container
+			.page-hero__wrapper
+				img(src="/assets/img/page-service-hero.jpg").page-hero__img
+				.page-hero__card
+					if isServiceInner
+						img(src=`/assets/img/service-icon-06.svg`).page-hero__full-icon
+					else
+						.page-hero__icon
+							img(src=`/assets/img/icon-${icon}.svg`)
+					.page-hero__column
+						p.page-hero__title= title
+						p.page-hero__text= text
+						button.page-hero__button.button.button--outline= linkText
