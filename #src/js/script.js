@@ -139,6 +139,19 @@ const doctorsSwiper = new Swiper('.doctors-swiper', {
 		},
 	},
 })
+const doctorSwiper = new Swiper('.doctor-swiper', {
+	slidesPerView: 'auto',
+	spaceBetween: 12,
+	loop: true,
+	navigation: {
+		nextEl: '.swiper-doctor-next',
+		prevEl: '.swiper-doctor-prev',
+	},
+	pagination: {
+		el: '.swiper-pagination',
+		clickable: true,
+	},
+})
 const articlesSwiper = new Swiper('.articles-swiper', {
 	slidesPerView: 1,
 	spaceBetween: 16,
