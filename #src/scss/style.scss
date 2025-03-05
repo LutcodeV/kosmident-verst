@@ -185,7 +185,6 @@ body {
 	@include r(1024px) {
 		position: sticky;
 		top: 0;
-		z-index: 10;
 		&__logo {
 			height: 46px;
 		}
@@ -2505,6 +2504,16 @@ body {
 		@extend .text-large, .text-large--light;
 		&+* {
 			margin-top: 12px;
+		}
+	}
+	@include r(768px) {
+		&__body {
+			display: flex;
+			flex-direction: column;
+		}
+		&__preview {
+			width: 100%;
+			max-width: 100%;
 		}
 	}
 }

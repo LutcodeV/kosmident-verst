@@ -3047,7 +3047,6 @@ h5--ligth {
   .header {
     position: sticky;
     top: 0;
-    z-index: 10;
   }
 
   .header__logo {
@@ -3613,6 +3612,21 @@ h5--ligth {
 
   .service-price-table {
     padding: 16px;
+  }
+
+  .detail-description-service__body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+
+  .detail-description-service__preview {
+    width: 100%;
+    max-width: 100%;
   }
 }
 
