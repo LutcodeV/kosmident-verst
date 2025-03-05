@@ -1,0 +1,7 @@
+extends _layout
+
+block main
+	+breadcrumbs(['Главная','Врачи'])
+	+pageHero('medical-assistant', 'Врачи')
+	include blocks/_doctors-grid-block
+	include blocks/_callback-block

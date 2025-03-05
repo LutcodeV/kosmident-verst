@@ -45,3 +45,36 @@ mixin pageHero(icon, title, text="Благодаря современным те
 						p.page-hero__title= title
 						p.page-hero__text= text
 						button.page-hero__button.button.button--outline= linkText
+
+mixin doctorCard(name, jobTitle, likes, experience)
+	.doctor-card
+		.doctor-card__head
+			img.doctor-card__img.doctor-card__img--1(src="/assets/img/doctor-01.jpg")
+			img.doctor-card__img.doctor-card__img--2(src="/assets/img/doctor-02.jpg")
+			.doctor-card__info
+				.doctor-card__tag
+					<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path opacity="0.4" d="M14.4329 6.68661C14.1729 6.31328 13.7129 6.09994 13.1863 6.09994H10.4529C10.2729 6.09994 10.1063 6.02661 9.99293 5.89328C9.87293 5.75994 9.82626 5.57328 9.85293 5.37994L10.1929 3.19328C10.3396 2.53994 9.90626 1.80661 9.25293 1.58661C8.64626 1.35994 7.93293 1.66661 7.64626 2.09994L4.83293 6.27994L4.75293 6.41328V12.3066L4.85293 12.4066L6.96626 14.0399C7.24626 14.3199 7.8796 14.4733 8.32626 14.4733H10.9263C11.8196 14.4733 12.7196 13.7999 12.9196 12.9799L14.5596 7.98661C14.7329 7.51328 14.6863 7.05328 14.4329 6.68661Z" fill="white"/>
+						<path d="M3.47301 4.2533H2.78634C1.75301 4.2533 1.33301 4.6533 1.33301 5.63996V12.3466C1.33301 13.3333 1.75301 13.7333 2.78634 13.7333H3.47301C4.50634 13.7333 4.92634 13.3333 4.92634 12.3466V5.63996C4.92634 4.6533 4.50634 4.2533 3.47301 4.2533Z" fill="white"/>
+					</svg>
+					= likes
+				.doctor-card__tag= experience
+		.doctor-card__body
+			p.doctor-card__suptitle= jobTitle
+			p.doctor-card__title= name
+
+mixin serviceCard(price, title, iconNumber)
+	.service-card
+		.service-card__top
+			.service-card__header
+				p.service-card__price= price
+				button.service-card__link
+					p.service-card__link-text Об услуге
+					<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M3.33333 8H12.6667" stroke="#6149AB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+						<path d="M8 3.33337L12.6667 8.00004L8 12.6667" stroke="#6149AB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+					</svg>
+			p.service-card__title!= title
+		.service-card__bottom
+			a(href="#").service-card__button.button.button--outline Записаться
+			img.service-card__img(src=`/assets/img/services-icon-${iconNumber}.svg`, alt="")
