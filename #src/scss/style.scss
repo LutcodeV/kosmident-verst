@@ -1237,7 +1237,14 @@ body {
 		}
 	}
 }
-// DOCTORS
+// ARTICLES
+.articles {
+	&__grid {
+		display: grid;
+		gap: 16px;
+		grid-template-columns: repeat(auto-fill, minmax(328px, 1fr));
+	}
+}
 .article-card {
 	border-radius: 24px;
 	width: 100%;
@@ -2085,6 +2092,7 @@ body {
 			position: absolute;
 			width: 100%;
 			z-index: 1;
+			border-radius: 24px;
 			left: 0;
 			top: 0;
 			height: 100%;
@@ -2096,6 +2104,7 @@ body {
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
+		border-radius: 24px;
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -2147,6 +2156,23 @@ body {
 	&__button {
 		color: #6149AB;
 	}
+	&--detail-article {
+		padding-bottom: 94px;
+		min-height: 514px;
+		.container {
+			overflow: visible;
+		}
+		.page-hero {
+			&__wrapper {
+				overflow: visible;
+				padding: 40px 0px;
+			}
+			&__card {
+				margin: auto auto -134px;
+				max-width: 736px;
+			}
+		}
+	}
 	@include r(768px) {
 		&__wrapper {
 			padding: 16px;
@@ -2188,6 +2214,17 @@ body {
 		}
 		&__column {
 			display: contents;
+		}
+		&--detail-article {
+			.page-hero {
+				&__card {
+					display: flex;
+				}
+				&__column {
+					display: flex;
+					flex-direction: column;
+				}
+			}
 		}
 	}
 }
@@ -2738,5 +2775,179 @@ body {
 	}
 	@include r(768px) {
 		text-align: left;
+	}
+}
+// PAGINATION
+.pagination {
+	margin: 60px auto 0;
+	display: flex;
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	&__buttons {
+		display: flex;
+		gap: 4px;
+	}
+	&__button {
+		@extend .text;
+		padding: 16px 24px;
+		border-radius: 24px;
+		transition: .3s ease;
+		path {
+			transition: .3s ease;
+		}
+		&--active {
+			background: var(--PURPLE-400);
+			color: #fff;
+		}
+		@include hover {
+			background: var(--PURPLE-200);
+			color: #fff;
+			path {
+				stroke: #fff;
+			}
+		}
+	}
+	@include r(768px) {
+		&__buttons > &__button {
+			&:nth-last-child(1),
+			&:nth-last-child(2) {
+				display: none;
+			}
+		}
+	}
+}
+// ARTICLE-CONTENT
+.article-content {
+	margin-top: 32px !important;
+	.container {
+		max-width: 768px;
+	}
+}
+.article-content-navigation {
+	display: flex;
+	width: 100%;
+	padding: 24px;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 24px;
+	background: #fff;
+	border-radius: 24px;
+	&__title {
+		color: var(--DARK-PURPLE-400, #211E2E);
+		font-size: 24px;
+		font-weight: 500;
+		line-height: 120%; /* 28.8px */
+	}
+	&__column {
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+	}
+	&__list {
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+		padding-left: 24px;
+		&>& {
+			margin-left: -8px;
+			.article-content-navigation__link {
+				list-style: lower-alpha
+			}
+		}
+	}
+	&__link {
+		@extend .text-large;
+		color: var(--PURPLE-400);
+		list-style: auto;
+		a {
+			font: inherit;
+			color: inherit;
+		}
+	}
+}
+.article-content-content {
+	display: flex;
+	flex-direction: column;
+	background: #fff;
+	border-radius: 24px;
+	width: 100%;
+	padding: 24px;
+	margin-top: 16px;
+	h1 {
+		font-size: 24px;
+		font-weight: 500;
+		line-height: 120%;
+	}
+	h2 {
+		font-size: 20px;
+		font-weight: 500;
+		line-height: 120%;
+		* + & {
+			margin-top: 16px;
+		}
+	}
+	p {
+		font-size: 16px;
+		font-weight: 250;
+		line-height: 120%;
+		* + & {
+			margin-top: 32px;
+		}
+	}
+	figure {
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+		* + & {
+			margin-top: 24px;
+		}
+	}
+	figcaption {
+		font-size: 12px;
+		font-weight: 700;
+		letter-spacing: 0.96px;
+		text-transform: uppercase;
+		opacity: 0.5;
+		padding: 0px 24px;
+	}
+	img {
+		width: 100%;
+		border-radius: 32px;
+		min-height: 380px;
+		object-fit: cover;
+	}
+	ul {
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+		padding-left: 24px;
+		* + & {
+			margin-top: 32px;
+		}
+	}
+	li {
+		font-size: 16px;
+		font-weight: 250;
+		line-height: 120%;
+		list-style: disc;
+	}
+	@include r(768px) {
+		h1 {
+			font-size: 20px;
+		}
+		* + h2 {
+			margin-top: 20px;
+		}
+		* + p,
+		* + ul {
+			margin-top: 16px;
+		}
+		* + figure {
+			margin-top: 24px;
+		}
+		figcaption {
+			text-align: center;
+		}
 	}
 }

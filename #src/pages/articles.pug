@@ -1,0 +1,6 @@
+extends _layout
+
+block main
+	+breadcrumbs(['Главная','Статьи'])
+	+pageHero('newspaper', 'Статьи')
+	include blocks/_article-grid-block

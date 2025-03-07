@@ -1,0 +1,7 @@
+extends _layout
+
+block main
+	+breadcrumbs(['Главная','Услуги','Когда после удаления зуба можно ставить имплант?'])
+	+pageHero('newspaper', 'Когда после удаления зуба можно ставить имплант?', text="", linkText="Записаться на прием", false, variant="detail-article")
+	include blocks/_article-content-block
+	include blocks/_articles-block

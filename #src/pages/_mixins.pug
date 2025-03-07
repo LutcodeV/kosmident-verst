@@ -30,8 +30,8 @@ mixin breadcrumbs(crumbs)
 			each item in crumbs
 				a(href="#").breadcrumb= item
 
-mixin pageHero(icon, title, text="Благодаря современным технологиям, многолетней практике и бесценным знаниям наши стоматологи могут справиться с любой проблемой полости рта.", linkText="Записаться на прием", isServiceInner=false)
-	section.section.page-hero
+mixin pageHero(icon, title, text="Благодаря современным технологиям, многолетней практике и бесценным знаниям наши стоматологи могут справиться с любой проблемой полости рта.", linkText="Записаться на прием", isServiceInner=false, variant="")
+	section(class=`section page-hero ${variant ? `page-hero--${variant}` : ''}`)
 		.container
 			.page-hero__wrapper
 				img(src="/assets/img/page-service-hero.jpg").page-hero__img
@@ -43,7 +43,8 @@ mixin pageHero(icon, title, text="Благодаря современным те
 							img(src=`/assets/img/icon-${icon}.svg`)
 					.page-hero__column
 						p.page-hero__title= title
-						p.page-hero__text= text
+						if text !== ''
+							p.page-hero__text= text
 						button.page-hero__button.button.button--outline= linkText
 
 mixin doctorCard(name, jobTitle, likes, experience)
@@ -78,3 +79,10 @@ mixin serviceCard(price, title, iconNumber)
 		.service-card__bottom
 			a(href="#").service-card__button.button.button--outline Записаться
 			img.service-card__img(src=`/assets/img/services-icon-${iconNumber}.svg`, alt="")
+
+mixin articleCard(name, date)
+	.article-card
+		img.article-card__img(src="/assets/img/article-preview-01.jpg", alt="")
+		.article-card__body
+			p.article-card__date= date
+			p.article-card__title= name
