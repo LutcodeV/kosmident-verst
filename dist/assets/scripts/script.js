@@ -225,6 +225,24 @@ const benefitsSwiper = new Swiper('.benefits-swiper', {
 		},
 	},
 })
+const gallerySwiper = new Swiper('.gallery-swiper', {
+	slidesPerView: 1,
+	spaceBetween: 16,
+	loop: true,
+	navigation: {
+		nextEl: '.swiper-gallery-next',
+		prevEl: '.swiper-gallery-prev',
+	},
+	pagination: {
+		el: '.swiper-pagination',
+		clickable: true,
+	},
+	breakpoints: {
+		1024: {
+			slidesPerView: 2,
+		},
+	},
+})
 
 // REVIEW
 const previewReviews = document.querySelectorAll('.js-review-preview')

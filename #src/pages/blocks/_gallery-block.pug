@@ -1,0 +1,25 @@
+include ../_mixins.pug
+
+section.section.gallery
+	.container
+		+sectionHeader('camera','Галерея', false)
+		.swiper__wrapper
+			.swiper.gallery-swiper
+				.swiper-wrapper
+					.swiper-slide
+						img(src="/assets/img/gallery-01.png", alt="")
+					.swiper-slide
+						img(src="/assets/img/gallery-02.png", alt="")
+					.swiper-slide
+						img(src="/assets/img/gallery-01.png", alt="")
+					.swiper-slide
+						img(src="/assets/img/gallery-02.png", alt="")
+				.swiper-pagination
+			.swiper-gallery-prev.swiper-button-prev
+				<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M25.667 16H6.33366M6.33366 16L11.0003 11.3334M6.33366 16L11.0003 20.6667" stroke="#6149AB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+				</svg>
+			.swiper-gallery-next.swiper-button-next
+				<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M6.33301 16H25.6663M25.6663 16L20.9997 11.3334M25.6663 16L20.9997 20.6667" stroke="#6149AB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+				</svg>

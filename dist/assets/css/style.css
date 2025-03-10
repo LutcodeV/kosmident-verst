@@ -1784,6 +1784,10 @@ h5--ligth {
   padding: 16px;
 }
 
+.form__button--about {
+  margin-top: -16px;
+}
+
 .input {
   width: 100%;
   padding: 20px;
@@ -3558,6 +3562,59 @@ h5--ligth {
   list-style: disc;
 }
 
+.gallery-swiper .swiper-slider {
+  height: 420px;
+  max-height: 420px;
+}
+
+.gallery-swiper img {
+  width: 100%;
+  height: 100%;
+  border-radius: 24px;
+}
+
+.callback-form-about__footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin-top: 40px;
+  padding-top: 16px;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  gap: 8px;
+  border-top: 1px solid rgba(144, 144, 144, 0.2);
+}
+
+.callback-form-about__footer-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.callback-about-card__img {
+  -o-object-fit: contain;
+  object-fit: contain;
+  border-radius: 24px;
+  width: 100%;
+  -o-object-position: center bottom;
+  object-position: center bottom;
+  min-width: 296px;
+  background: radial-gradient(286.17% 128.02% at 66.59% 21.32%, rgba(197, 178, 255, 0.2) 0%, rgba(39, 29, 69, 0.2) 100%), #FFF;
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 0px;
+  flex: 1 1 0;
+}
+
 @media screen and (min-width: 769px) {
   .services:not(.services--slider) .services__grid {
     display: grid;
@@ -4217,6 +4274,30 @@ h5--ligth {
 
   .article-content-content figcaption {
     text-align: center;
+  }
+
+  .callback--about .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+    -ms-flex-direction: column-reverse;
+    flex-direction: column-reverse;
+    max-width: calc(100% - 32px);
+    gap: 24px;
+    border-radius: 24px;
+    background: #fff;
+    padding: 16px;
+  }
+
+  .callback--about .callback-form {
+    padding: 0;
+    min-width: 0;
+  }
+
+  .callback-form-about__footer {
+    display: none;
   }
 }
 

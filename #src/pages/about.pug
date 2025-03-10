@@ -1,0 +1,9 @@
+extends _layout
+
+block main
+	+breadcrumbs(['Главная','О клинике'])
+	+pageHero('about', 'О клинике')
+	include blocks/_benefits-block
+	include blocks/_gallery-block
+	include blocks/_callback-about-block
+	include blocks/_doctors-block

@@ -1,0 +1,38 @@
+include ../_mixins.pug
+
+section.section.callback.callback--about
+	.container
+		.callback-form
+			.callback-form__column
+				.callback-form__header
+					p.callback-form__title Заказать обратный звонок
+					p.callback-form__subtitle Наш сотрудник ответит вам в ближайшее время
+				form.form#formCallback
+					.form__group
+						.form__inputs
+							input(type="text" placeholder="Имя").input
+							input(type="tel" placeholder="+7 (___) ___ - __ - __").input
+						label.checkbox
+							input.checkbox__input(type="checkbox")
+							.checkbox__box
+								<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M10 16.4L6 12.4L7.4 11L10 13.6L16.6 7L18 8.4L10 16.4Z" fill="white"/>
+								</svg>
+							p.checkbox__text Я даю согласие на обработку персональных данных
+					.callback-form__footer
+						img(src="/assets/img/icon-chats.svg", alt="")
+						p.callback-form__text Запишитесь сейчас и получите <br> бесплатную консультацию!
+					button.form__button.form__button--about.button.button--dark Заказать звонок
+				.callback-form-about__footer
+					a(href="#").contact
+						.contact__icon
+							img(src="/assets/img/gradient-icon-phone.svg")
+						.contact__column
+							p.contact__title +7 (495) 374 92 82
+							p.contact__subtitle Каждый день с 9:00 до 21:00
+					.callback-form-about__footer-row
+						a.callback-form-about__social(href="#")
+							img(src="/assets/img/gradient-icon-whatsapp.svg", alt="")
+						a.callback-form-about__social(href="#")
+							img(src="/assets/img/gradient-icon-telegram.svg", alt="")
+		img.callback-about-card__img(src="/assets/img/about-img-01.png", alt="")
