@@ -1,4 +1,3 @@
-
 // MASK
 const inputsTypeTel = document.querySelectorAll('input[type="tel"]')
 if(inputsTypeTel.length > 0) {
@@ -351,3 +350,13 @@ if(includeService) {
 	})
 	includeServiceStepsItems[0].click()
 }
+
+// LOTTIE
+import { DotLottie } from "https://esm.sh/@lottiefiles/dotlottie-web";
+
+new DotLottie({
+	autoplay: true,
+	loop: true,
+	canvas: document.getElementById("dotlottie-canvas"),
+	src: "/assets/animation/error-page-animation.lottie",
+});

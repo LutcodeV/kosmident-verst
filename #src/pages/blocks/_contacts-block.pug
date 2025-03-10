@@ -1,0 +1,27 @@
+include ../_mixins.pug
+
+section.section.map.map--contacts
+	.container
+		.map-container#map
+		.map-info
+			p.map-info__title Контакты
+			.map-info__column
+				a(href="#").contact
+					.contact__icon
+						img(src="/assets/img/gradient-icon-phone.svg")
+					.contact__column
+						p.contact__title +7 (495) 374 92 82
+						p.contact__subtitle Каждый день с 9:00 до 21:00
+				a(href="#").contact
+					.contact__icon
+						img(src="/assets/img/gradient-icon-address.svg")
+					.contact__column
+						p.contact__title Москва
+						p.contact__subtitle улица Вертолётчиков, 11
+				a(href="#").contact
+					.contact__icon
+						img(src="/assets/img/gradient-icon-email.svg")
+					.contact__column
+						p.contact__title Электронная почта
+						p.contact__subtitle kosmident.nekrasovka@gmail.com
+			button.button.button--dark Записаться на прием
