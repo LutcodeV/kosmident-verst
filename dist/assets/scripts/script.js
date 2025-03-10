@@ -354,9 +354,11 @@ if(includeService) {
 // LOTTIE
 import { DotLottie } from "https://esm.sh/@lottiefiles/dotlottie-web";
 
-new DotLottie({
-	autoplay: true,
-	loop: true,
-	canvas: document.getElementById("dotlottie-canvas"),
-	src: "/assets/animation/error-page-animation.lottie",
-});
+if(document.getElementById("dotlottie-canvas")) {
+	new DotLottie({
+		autoplay: true,
+		loop: true,
+		canvas: document.getElementById("dotlottie-canvas"),
+		src: "/assets/animation/error-page-animation.lottie",
+	});
+}
