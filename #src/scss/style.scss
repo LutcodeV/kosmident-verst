@@ -1861,8 +1861,11 @@ body {
 	position: absolute;
 	@include r(768px) {
 		height: 420px;
-		width: 100%;
 		position: static;
+		transform: translate(0);
+		margin-left: -16px;
+		margin-right: -16px;
+		width: calc(100% + 32px);
 	}
 }
 .map-info {
@@ -1893,6 +1896,8 @@ body {
 		max-width: 100%;
 		padding: 16px;
 		gap: 24px;
+		position: static;
+		margin-bottom: 16px;
 	}
 }
 
@@ -3371,7 +3376,7 @@ body {
 	bottom: 0;
 	left: 0;
 	width: 100%;
-	z-index: 6;
+	z-index: 21;
 	padding-bottom: 24px;
 	animation: cookies .3s ease-out .3s both;
 	display: none;
