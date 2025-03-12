@@ -9,55 +9,42 @@ if(inputsTypeTel.length > 0) {
 	})
 }
 
+
+// MODALS
+const modalContainer = document.querySelector('.modal-container')
+// const modalContainerWrapper = document.querySelector('.modal-container__wrapper')
+const modals = document.querySelectorAll('.modal')
+const openModal = (modal) => {
+	modalContainer.classList.add('active')
+	modal.classList.add('active')
+}
+const closeAllModals = () => {
+	document.querySelectorAll('.modal').forEach((item) => {
+		item.classList.remove('active')
+	});
+	modalContainer.classList.remove('active')
+}
+
+if(modalContainer) {
+	modals.forEach((modal) => {
+		const openers = document.querySelectorAll(`[data-modal-open="${modal.id}"]`)
+		const closes = modal.querySelectorAll('.modal__close, [data-modal-close]')
+
+		closes.forEach((close) => {
+			close.addEventListener('click', () => {
+				closeAllModals()
+			})
+		})
+		openers.forEach((opener) => opener.addEventListener('click', () => {
+			closeAllModals()
+			openModal(modal)
+		}))
+	})
+}
 // FORMS
 const forms = document.querySelectorAll('form')
 const formsMethods = {
 	formRegistrationToReception: (formData) => {
-		try {
-			closeAllModals()
-			openModal(document.querySelector('#successForm'))
-		} catch (e) {
-			closeAllModals()
-			openModal(document.querySelector('#errorForm'))
-		}
-	},
-	formOrderHomeExit: (formData) => {
-		try {
-			closeAllModals()
-			openModal(document.querySelector('#successForm'))
-		} catch (e) {
-			closeAllModals()
-			openModal(document.querySelector('#errorForm'))
-		}
-	},
-	formOrderToReception: (formData) => {
-		try {
-			closeAllModals()
-			openModal(document.querySelector('#successForm'))
-		} catch (e) {
-			closeAllModals()
-			openModal(document.querySelector('#errorForm'))
-		}
-	},
-	formCouponForm: (formData) => {
-		try {
-			closeAllModals()
-			openModal(document.querySelector('#successForm'))
-		} catch (e) {
-			closeAllModals()
-			openModal(document.querySelector('#errorForm'))
-		}
-	},
-	formFaqForm: (formData) => {
-		try {
-			closeAllModals()
-			openModal(document.querySelector('#successForm'))
-		} catch (e) {
-			closeAllModals()
-			openModal(document.querySelector('#errorForm'))
-		}
-	},
-	formReviewForm: (formData) => {
 		try {
 			closeAllModals()
 			openModal(document.querySelector('#successForm'))
@@ -101,10 +88,18 @@ if(header) {
 }
 
 // SWIPERS
+const heroCardSwiper = new Swiper('.hero-card-swiper', {
+	slidesPerView: 1,
+	spaceBetween: 16,
+	// loop: true,
+})
 const heroSwiper = new Swiper('.hero-swiper', {
 	slidesPerView: 1,
 	spaceBetween: 16,
-	loop: true,
+	// loop: true,
+	thumbs: {
+		swiper: heroCardSwiper,
+	},
 	navigation: {
 		nextEl: '.swiper-hero-next',
 		prevEl: '.swiper-hero-prev',
@@ -114,6 +109,13 @@ const heroSwiper = new Swiper('.hero-swiper', {
 		clickable: true,
 	},
 })
+if(heroCardSwiper, heroSwiper) {
+	heroCardSwiper.on('activeIndexChange', function () {
+		console.log(this.activeIndex, heroSwiper.activeIndex)
+		heroSwiper.slideTo(this.realIndex)
+	})
+}
+
 const doctorsSwiper = new Swiper('.doctors-swiper', {
 	slidesPerView: 1,
 	spaceBetween: 16,
@@ -311,6 +313,7 @@ if(map) {
 				}
 			});
 			myMap.geoObjects.add(myPlacemark)
+			myMap.behaviors.disable('scrollZoom')
 	}
 }
 
@@ -361,4 +364,43 @@ if(document.getElementById("dotlottie-canvas")) {
 		canvas: document.getElementById("dotlottie-canvas"),
 		src: "/assets/animation/error-page-animation.lottie",
 	});
+}
+
+// DROPDOWN
+const dropdowns = document.querySelectorAll('.dropdown')
+if(dropdowns.length) {
+	dropdowns.forEach((dropdown) => {
+		const dropdownInput = dropdown.querySelector('.dropdown__input')
+		const dropdownHeader = dropdown.querySelector('.dropdown__header')
+		const dropdownListItems = dropdown.querySelectorAll('.dropdown__list-item')
+
+		dropdownHeader.addEventListener('click', () => {
+			dropdown.classList.toggle('active')
+		})
+		dropdownListItems.forEach(button => {
+			button.addEventListener('click', () => {
+				dropdownInput.value = button.innerText
+				dropdown.classList.remove('active')
+			})
+		})
+		window.addEventListener('click', (e) => {
+			if(!e.composedPath().find(el => el.classList?.contains('dropdown'))) {
+				dropdown.classList.remove('active')
+			}
+		})
+	})
+}
+
+// COOKIES
+const cookies = document.querySelector('.cookies')
+if(cookies) {
+	const isCookiesAccepted = localStorage.getItem('cookies-accepted')
+	const cookiesButton = cookies.querySelector('button')
+	if(!isCookiesAccepted) {
+		cookies.classList.add('active')
+		cookiesButton.addEventListener('click', () => {
+			cookies.classList.remove('active')
+			localStorage.setItem('cookies-accepted', 'true')
+		})
+	}
 }

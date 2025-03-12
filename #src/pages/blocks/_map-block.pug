@@ -1,8 +1,8 @@
 include ../_mixins.pug
 
 section.section.map
-	.map-container#map
 	.container
+		.map-container#map
 		.map-info
 			p.map-info__title Контакты
 			.map-info__column
@@ -18,4 +18,4 @@ section.section.map
 					.contact__column
 						p.contact__title Москва, м. некрасовка
 						p.contact__subtitle улица Вертолётчиков, 11
-			button.button.button--dark Записаться на прием
+			button.button.button--dark(data-modal-open="registrationToReceptionForm") Записаться на прием

@@ -45,13 +45,15 @@ mixin pageHero(icon, title, text="Благодаря современным те
 						p.page-hero__title= title
 						if text !== ''
 							p.page-hero__text= text
-						button.page-hero__button.button.button--outline= linkText
+						if text === 'Записаться на прием'
+							button.page-hero__button.button.button--outline(data-modal-open="registrationToReceptionForm")= linkText
+						else
+							button.page-hero__button.button.button--outline= linkText
 
 mixin doctorCard(name, jobTitle, likes, experience)
 	.doctor-card
 		.doctor-card__head
-			img.doctor-card__img.doctor-card__img--1(src="/assets/img/doctor-01.jpg")
-			img.doctor-card__img.doctor-card__img--2(src="/assets/img/doctor-02.jpg")
+			img.doctor-card__img(src="/assets/img/doctor-01.jpg")
 			.doctor-card__info
 				.doctor-card__tag
 					<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
