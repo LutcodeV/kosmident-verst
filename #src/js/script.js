@@ -404,3 +404,28 @@ if(cookies) {
 		})
 	}
 }
+
+// DOCTOR-VIDEO
+const modalVideo = document.querySelectorAll('.modal-video')
+const videoOn = (video, wrapper) => {
+	if(video === undefined || wrapper === undefined) return
+	video.play()
+	video.controls = true
+	wrapper.classList.add('active')
+}
+const videoOff = (video, wrapper) => {
+	if(video === undefined || wrapper === undefined) return
+	video.pause()
+	video.controls = false
+	wrapper.classList.remove('active')
+}
+if(modalVideo.length) {
+	modalVideo.forEach((item) => {
+		const video = item.querySelector('video')
+		const play = item.querySelector('.modal-video__play')
+		const wrapper = item.querySelector('.modal-video__video-wrapper')
+		play.addEventListener('click', () => video.paused ? videoOn(video, wrapper) : videoOff(video, wrapper))
+		video.addEventListener('pause', () => videoOff(video, wrapper))
+		video.addEventListener('ended', () => videoOff(video, wrapper))
+	})
+}

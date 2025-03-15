@@ -4,3 +4,18 @@ block main
 	+breadcrumbs(['Главная','Врачи','Болховский Ян Вячеславович'])
 	include blocks/_doctor-block
 	include blocks/_doctors-block
+
+block modals
+	.modal.modal-video.modal-video--vertical#doctorVideo
+		button.modal__close
+			<svg width="33" height="32" viewBox="0 0 33 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M11.7007 22.6667L9.83398 20.8L14.634 16L9.83398 11.2334L11.7007 9.3667L16.5007 14.1667L21.2673 9.3667L23.134 11.2334L18.334 16L23.134 20.8L21.2673 22.6667L16.5007 17.8667L11.7007 22.6667Z" fill="#6149AB"/>
+			</svg>
+		.modal-video__column
+			p.modal-video__title Болховский Ян Вячеславович
+			.modal-video__video-wrapper
+				button.modal-video__play
+					<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M8.00511 16.0084V19.5684C8.00511 23.9817 11.1384 25.7951 14.9651 23.5817L18.0451 21.7951L21.1251 20.0084C24.9518 17.7951 24.9518 14.1817 21.1251 11.9684L18.0451 10.1817L14.9651 8.39506C11.1384 6.22172 8.00511 8.02172 8.00511 12.4484L8.00511 16.0084Z" fill="#6149AB" stroke="#6149AB" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+					</svg>
+				video(src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" playisinline).modal-video__video
