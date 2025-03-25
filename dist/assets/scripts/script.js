@@ -227,7 +227,7 @@ const benefitsSwiper = new Swiper('.benefits-swiper', {
 	},
 })
 const gallerySwiper = new Swiper('.gallery-swiper', {
-	slidesPerView: 1,
+	slidesPerView: 'auto',
 	spaceBetween: 16,
 	loop: true,
 	navigation: {
@@ -237,11 +237,6 @@ const gallerySwiper = new Swiper('.gallery-swiper', {
 	pagination: {
 		el: '.swiper-pagination',
 		clickable: true,
-	},
-	breakpoints: {
-		1024: {
-			slidesPerView: 2,
-		},
 	},
 })
 
@@ -320,11 +315,11 @@ if(map) {
 // HERO
 const heroBlock = document.querySelector('.hero');
 if(heroBlock) {
-	const heroContent = heroBlock.querySelector('.hero-content')
-	const heroContentClose = heroContent.querySelector('.hero-content__close')
+	const heroContentColumn = heroBlock.querySelector('.hero-content__column')
+	const heroContentClose = heroContentColumn.querySelector('.hero-content__close')
 
 	heroContentClose.addEventListener('click', () => {
-		heroContent.classList.toggle('active')
+		heroContentColumn.classList.toggle('active')
 	})
 }
 
@@ -427,5 +422,33 @@ if(modalVideo.length) {
 		play.addEventListener('click', () => video.paused ? videoOn(video, wrapper) : videoOff(video, wrapper))
 		video.addEventListener('pause', () => videoOff(video, wrapper))
 		video.addEventListener('ended', () => videoOff(video, wrapper))
+	})
+}
+
+// ZOOM
+const zoomImg = document.querySelectorAll('[data-zoom]')
+if(zoomImg.length) {
+	zoomImg.forEach((item) => {
+		item.addEventListener('click', () => {
+			const modal = document.createElement('div')
+			modal.classList = ['modal modal-video modal-video--zoom active']
+			modal.innerHTML = `
+				<button class="modal__close">
+					<svg width="33" height="32" viewBox="0 0 33 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M11.7007 22.6667L9.83398 20.8L14.634 16L9.83398 11.2334L11.7007 9.3667L16.5007 14.1667L21.2673 9.3667L23.134 11.2334L18.334 16L23.134 20.8L21.2673 22.6667L16.5007 17.8667L11.7007 22.6667Z" fill="#6149AB"></path>
+					</svg>
+				</button>
+				<img class="modal-video__img" src="${item.src}" alt="${item.alt}">
+			`
+			const close = modal.querySelector('.modal__close')
+
+			modalContainer.querySelector('.modal-container__wrapper').appendChild(modal)
+			modalContainer.classList.add('active')
+
+			close.addEventListener('click', () => {
+				modal.remove()
+				modalContainer.classList.remove('active')
+			})
+		})
 	})
 }
