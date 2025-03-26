@@ -1582,8 +1582,21 @@ h5--ligth {
   cursor: pointer;
 }
 
-.article-card__img {
+.article-card__img-wrapper {
   height: 280px;
+}
+
+.article-card__img-wrapper::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: rgba(97, 73, 171, 0.6);
+}
+
+.article-card__img {
   width: 100%;
   -o-object-fit: cover;
   object-fit: cover;

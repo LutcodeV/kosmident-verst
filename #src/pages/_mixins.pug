@@ -84,7 +84,8 @@ mixin serviceCard(price, title, iconNumber)
 
 mixin articleCard(name, date)
 	.article-card
-		img.article-card__img(src="/assets/img/article-preview-01.jpg", alt="")
+		.article-card__img-wrapper
+			img.article-card__img(src="/assets/img/article-preview-01.jpg", alt="")
 		.article-card__body
 			p.article-card__date= date
 			p.article-card__title= name
